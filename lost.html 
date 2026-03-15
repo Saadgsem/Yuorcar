@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تقديم بلاغ - فتش عربيتك وعربية جارك</title>
+    <title>تقديم بلاغ - محرك بحث سعد النهائي</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; color: #333; }
         .container { max-width: 600px; background: white; padding: 20px; border-radius: 10px; margin: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h2 { text-align: center; color: #d9534f; }
-        .payment-info { background-color: #fff3f3; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #d9534f; }
-        .price-tag { font-size: 24px; color: #d9534f; text-align: center; display: block; margin-bottom: 10px; font-weight: bold; }
+        h2 { text-align: center; color: #d9534f; margin-top: 0; }
+        .payment-info { background-color: #fff3f3; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 2px solid #d9534f; line-height: 1.6; }
+        .price-tag { font-size: 26px; color: #d9534f; text-align: center; display: block; margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid #ffcccc; padding-bottom: 5px; }
         label { font-weight: bold; display: block; margin-top: 15px; }
-        input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
-        button { width: 100%; background-color: #d9534f; color: white; border: none; padding: 15px; font-size: 18px; font-weight: bold; border-radius: 5px; margin-top: 20px; cursor: pointer; }
-        button:hover { background-color: #c9302c; }
+        input { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 16px; }
+        button { width: 100%; background-color: #d9534f; color: white; border: none; padding: 15px; font-size: 18px; font-weight: bold; border-radius: 5px; margin-top: 25px; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #c9302c; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .footer-note { text-align: center; font-size: 14px; color: #777; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -24,10 +25,10 @@
     <div class="payment-info">
         <span class="price-tag">قيمة البلاغ: 5,000</span>
         <strong>خطوات تقديم البلاغ:</strong><br>
-        1. يرجى تحويل المبلغ الموضح أعلاه إلى رقم الحساب: <b>2113114</b><br>
+        1. يرجى تحويل مبلغ 5,000 إلى رقم الحساب: <b>2113114</b><br>
         باسم: <b>سعد قسم الباري</b><br>
-        2. احتفظ برقم الإشعار لإدخاله في النموذج أدناه.<br>
-        3. عند الإرسال، سيتم توجيهك لواتساب لإرسال صورة الإشعار وتأكيد البلاغ.
+        2. احتفظ برقم الإشعار (أو صورة منه).<br>
+        3. املأ البيانات أدناه واضغط إرسال لتأكيد البلاغ عبر واتساب.
     </div>
 
     <form id="reportForm">
@@ -38,16 +39,18 @@
         <input type="text" id="chassisNum" placeholder="أدخل آخر أرقام الشاسي بعد الأحرف" required>
 
         <label>رقم اللوحة:</label>
-        <input type="text" id="plateNum" placeholder="أدخل رقم اللوحة">
+        <input type="text" id="plateNum" placeholder="أدخل رقم اللوحة (اختياري)">
 
-        <label>رقم هاتف الزائر (للتواصل):</label>
-        <input type="tel" id="visitorPhone" placeholder="أدخل رقم هاتفك" required>
+        <label>رقم هاتف الزائر:</label>
+        <input type="tel" id="visitorPhone" placeholder="أدخل رقم هاتفك للتواصل" required>
 
         <label>رقم إشعار التحويل البنكي:</label>
-        <input type="text" id="receiptNum" placeholder="أدخل رقم الإشعار" required>
+        <input type="text" id="receiptNum" placeholder="أدخل رقم العملية أو الإشعار" required>
 
-        <button type="button" onclick="sendToWhatsApp()">إرسال البلاغ (5,000)</button>
+        <button type="button" onclick="sendToWhatsApp()">إرسال البلاغ وتأكيد الدفع</button>
     </form>
+    
+    <p class="footer-note">سيتم مراجعة بلاغك وإضافته لمحرك البحث فوراً.</p>
 </div>
 
 <script>
@@ -66,13 +69,15 @@
         var message = "🚨 *بلاغ سيارة مفقودة جديد* 🚨%0a%0a" +
                       "🚙 *نوع العربية:* " + carType + "%0a" +
                       "🔢 *آخر أرقام الشاسي:* " + chassisNum + "%0a" +
-                      "🏷️ *رقم اللوحة:* " + plateNum + "%0a" +
+                      "🏷️ *رقم اللوحة:* " + (plateNum ? plateNum : "غير متوفر") + "%0a" +
                       "📞 *رقم الزائر:* " + visitorPhone + "%0a" +
                       "🧾 *رقم إشعار التحويل:* " + receiptNum + "%0a" +
-                      "💰 *القيمة المستلمة:* 5,000";
+                      "💰 *القيمة:* 5,000 ج.س";
 
         var adminPhone = "249100030140"; 
         var whatsappUrl = "https://wa.me/" + adminPhone + "?text=" + message;
+        
+        // فتح الرابط في نافذة جديدة
         window.open(whatsappUrl, '_blank');
     }
 </script>
