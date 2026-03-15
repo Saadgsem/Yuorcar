@@ -268,6 +268,83 @@
             <a href="https://t.me/sudan_car" target="_blank" class="btn-tg">
                 🚀 انضم لقناة التلجرام الرسمية للمفقودات
             </a>
+<div style="width: 100%; text-align: center; margin-top: 25px; margin-bottom: 40px; clear: both;">
+    <button onclick="document.getElementById('reportModal').style.display='flex'" style="background: linear-gradient(135deg, #ff4b2b, #ff0000); color: #ffffff; padding: 18px 35px; font-size: 18px; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2); width: 85%; max-width: 350px; transition: 0.3s; font-family: sans-serif;">
+        🚨 تقديم بلاغ عن مفقودة
+    </button>
+</div>
+
+<div id="reportModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); backdrop-filter: blur(5px); justify-content: center; align-items: center; direction: rtl;">
+    <div style="background-color:#fff; padding:25px; border-radius:20px; width:90%; max-width:450px; position:relative; box-shadow: 0 15px 35px rgba(0,0,0,0.3); animation: slideUp 0.4s ease-out;">
+        
+        <span onclick="document.getElementById('reportModal').style.display='none'" style="position:absolute; top:15px; left:20px; font-size:24px; color:#aaa; cursor:pointer;">✕</span>
+        
+        <h2 style="text-align: center; color: #333; margin-top: 10px; font-size: 20px; font-family: sans-serif;">بيانات السيارة المفقودة</h2>
+        
+        <div style="background-color: #fdf2f2; padding: 15px; border-radius: 12px; margin-bottom: 20px; border-right: 4px solid #d9534f;">
+            <div style="font-size: 18px; color: #d9534f; text-align: center; font-weight: bold; margin-bottom: 5px;">قيمة البلاغ: 5,000 ج.س</div>
+            <p style="font-size: 13px; color: #666; margin: 0; text-align: center;">حوّل لحساب: <b>2113114</b> (سعد قسم الباري)</p>
+        </div>
+
+        <form id="popupForm">
+            <div style="margin-bottom: 12px;">
+                <label style="font-size: 13px; color: #888; margin-right: 5px;">نوع العربية</label>
+                <input type="text" id="popCarType" placeholder="مثال: آكسنت دبدوب" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fafafa;">
+            </div>
+            
+            <div style="margin-bottom: 12px;">
+                <label style="font-size: 13px; color: #888; margin-right: 5px;">آخر أرقام الشاسي</label>
+                <input type="text" id="popChassis" placeholder="أدخل الأرقام فقط" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fafafa;">
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <label style="font-size: 13px; color: #888; margin-right: 5px;">رقم هاتفك</label>
+                <input type="tel" id="popPhone" placeholder="للتواصل معك" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fafafa;">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label style="font-size: 13px; color: #888; margin-right: 5px;">رقم إشعار التحويل</label>
+                <input type="text" id="popReceipt" placeholder="رقم العملية البنكية" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fafafa;">
+            </div>
+
+            <button type="button" onclick="sendPopupToWhatsApp()" style="width: 100%; background: #25d366; color: white; border: none; padding: 16px; font-size: 17px; font-weight: bold; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+                 إرسال عبر واتساب 
+            </button>
+        </form>
+    </div>
+</div>
+
+<style>
+    @keyframes slideUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+</style>
+
+<script>
+    function sendPopupToWhatsApp() {
+        var carType = document.getElementById("popCarType").value;
+        var chassis = document.getElementById("popChassis").value;
+        var phone = document.getElementById("popPhone").value;
+        var receipt = document.getElementById("popReceipt").value;
+
+        if(!carType || !chassis || !phone || !receipt) {
+            alert("أكمل جميع البيانات أولاً يا طيب!");
+            return;
+        }
+
+        var message = "🚨 *بلاغ سيارة مفقودة جديد* 🚨%0a%0a" +
+                      "🚙 *النوع:* " + carType + "%0a" +
+                      "🔢 *أرقام الشاسي:* " + chassis + "%0a" +
+                      "📞 *الهاتف:* " + phone + "%0a" +
+                      "🧾 *رقم الإشعار:* " + receipt + "%0a" +
+                      "💰 *القيمة:* 5,000 ج.س";
+
+        var adminPhone = "249100030140"; 
+        window.open("https://wa.me/" + adminPhone + "?text=" + message, '_blank');
+    }
+</script>
+
 
             <div id="resultsCard" class="result-box">
                 <h3 style="color: #1e293b; font-size: 1.1rem;">✅ تم العثور على الرقم في سجلاتنا</h3>
@@ -2736,21 +2813,6 @@
         }
     });
 </script>
-<div style="text-align: center; margin-top: 20px;">
-    <a href="lost.html" style="
-        background-color: #ff0000; 
-        color: #ffffff; 
-        padding: 15px 30px; 
-        font-size: 20px; 
-        font-weight: bold; 
-        text-decoration: none; 
-        border-radius: 8px; 
-        display: inline-block;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    ">
-        قائمة البلاغات / تقديم بلاغ
-    </a>
-</div>
 
 
 </body>
