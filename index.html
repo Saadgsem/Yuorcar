@@ -269,18 +269,20 @@
                 🚀 انضم لقناة التلجرام الرسمية للمفقودات
             </a>
 <div style="width: 100%; text-align: center; margin-top: 30px; margin-bottom: 40px; clear: both; direction: rtl;">
+    
     <button onclick="document.getElementById('reportModal').style.display='flex'" style="background: linear-gradient(135deg, #ff4b2b, #ff0000); color: #ffffff; padding: 18px 25px; font-size: 17px; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2); width: 90%; max-width: 380px; transition: 0.3s; font-family: sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
         <span>🚨 تقديم بلاغ عن مفقودة</span>
         <span style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); padding: 2px 10px; border-radius: 15px; font-size: 13px;">
-            +145 بلاغ
+            +191 بلاغ
         </span>
     </button>
     
     <div style="margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 5px;">
         <span style="color: #27ae60; font-size: 18px;">✅</span>
-        <span style="color: #444; font-size: 13px; font-weight: bold;">تم التحقق بنجاح من 89 سيارة حتى الآن</span>
+        <span style="color: #444; font-size: 13px; font-weight: bold;">تم التحقق بنجاح من 69 سيارة حتى الآن</span>
     </div>
 </div>
+
 <div id="reportModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); backdrop-filter: blur(5px); justify-content: center; align-items: center; direction: rtl;">
     <div style="background-color:#fff; padding:25px; border-radius:20px; width:90%; max-width:450px; position:relative; box-shadow: 0 15px 35px rgba(0,0,0,0.3); animation: slideUp 0.4s ease-out; overflow-y: auto; max-height: 95vh;">
         
@@ -289,7 +291,7 @@
         <h2 style="text-align: center; color: #333; margin-top: 10px; font-size: 20px;">بيانات السيارة المفقودة</h2>
         
         <div style="background-color: #fdf2f2; padding: 15px; border-radius: 12px; margin-bottom: 20px; border-right: 4px solid #d9534f;">
-            <div style="font-size: 18px; color: #d9534f; text-align: center; font-weight: bold; margin-bottom: 5px;">قيمة البلاغ: 5,000 ج.س</div>
+            <div style="font-size: 18px; color: #d9534f; text-align: center; font-weight: bold; margin-bottom: 5px;">قيمة البلاغ: 7,000 ج.س</div>
             <p style="font-size: 13px; color: #666; margin: 0; text-align: center;">حوّل لحساب: <b>2113114</b> (سعد قسم الباري)</p>
         </div>
 
@@ -320,23 +322,16 @@
             </div>
 
             <div style="margin-bottom: 20px; text-align: right;">
-                <label style="font-size: 13px; color: #888; margin-right: 5px;">رقم الإشعار (اختياري)</label>
+                <label style="font-size: 13px; color: #888; margin-right: 5px;">رقم الإشعار</label>
                 <input type="text" id="popReceipt" placeholder="ارسل صورة الاشعار بعد ارسال الطلب" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fffde7; border-color: #fbc02d;">
             </div>
 
-            <button type="button" onclick="sendPopupToWhatsApp()" style="width: 100%; background: #25d366; color: white; border: none; padding: 16px; font-size: 17px; font-weight: bold; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+            <button type="button" onclick="sendPopupToWhatsApp()" style="width: 100%; background: #25d366; color: white; border: none; padding: 16px; font-size: 17px; font-weight: bold; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;">
                  إرسال الطلب عبر واتساب 
             </button>
         </form>
     </div>
 </div>
-
-<style>
-    @keyframes slideUp {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-</style>
 
 <script>
     function sendPopupToWhatsApp() {
@@ -348,7 +343,7 @@
         var receipt = document.getElementById('popReceipt').value;
 
         if(!carType || !chassis || !phone) {
-            alert('الرجاء إكمال بيانات السيارة ورقم الهاتف!');
+            alert('الرجاء إكمال البيانات الأساسية!');
             return;
         }
 
@@ -358,6 +353,7 @@
                       "📋 *بيانات اللوحة:* [ " + plateNum + " - " + plateChar + " ]%0a" +
                       "📞 *تلفون التواصل:* " + phone + "%0a" +
                       "🧾 *رقم الإشعار:* " + (receipt ? receipt : "سيُرفق صورة") + "%0a%0a" +
+                      "💰 *القيمة:* 7,000 ج.س%0a" +
                       "📸 *تنبيه:* سأرسل صورة إشعار التحويل الآن لتأكيد الطلب.";
 
         var adminPhone = "249100030140"; 
@@ -365,37 +361,6 @@
     }
 </script>
 
-
-<style>
-    @keyframes slideUp {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-</style>
-
-<script>
-    function sendPopupToWhatsApp() {
-        var carType = document.getElementById("popCarType").value;
-        var chassis = document.getElementById("popChassis").value;
-        var phone = document.getElementById("popPhone").value;
-        var receipt = document.getElementById("popReceipt").value;
-
-        if(!carType || !chassis || !phone || !receipt) {
-            alert("أكمل جميع البيانات أولاً يا طيب!");
-            return;
-        }
-
-        var message = "🚨 *بلاغ سيارة مفقودة جديد* 🚨%0a%0a" +
-                      "🚙 *النوع:* " + carType + "%0a" +
-                      "🔢 *أرقام الشاسي:* " + chassis + "%0a" +
-                      "📞 *الهاتف:* " + phone + "%0a" +
-                      "🧾 *رقم الإشعار:* " + receipt + "%0a" +
-                      "💰 *القيمة:* 5,000 ج.س";
-
-        var adminPhone = "249100030140"; 
-        window.open("https://wa.me/" + adminPhone + "?text=" + message, '_blank');
-    }
-</script>
 
 
             <div id="resultsCard" class="result-box">
