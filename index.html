@@ -268,12 +268,12 @@
             <a href="https://t.me/sudan_car" target="_blank" class="btn-tg">
                 🚀 انضم لقناة التلجرام الرسمية للمفقودات
             </a>
-<div style="width: 100%; text-align: center; margin-top: 30px; margin-bottom: 40px; clear: both; direction: rtl;">
+ <div style="width: 100%; text-align: center; margin-top: 30px; margin-bottom: 40px; clear: both; direction: rtl;">
     
     <button onclick="document.getElementById('reportModal').style.display='flex'" style="background: linear-gradient(135deg, #ff4b2b, #ff0000); color: #ffffff; padding: 18px 25px; font-size: 17px; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2); width: 90%; max-width: 380px; transition: 0.3s; font-family: sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
         <span>🚨 تقديم بلاغ عن مفقودة</span>
         <span style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); padding: 2px 10px; border-radius: 15px; font-size: 13px;">
-            +191 بلاغ
+            +211 بلاغ
         </span>
     </button>
     
@@ -283,52 +283,59 @@
     </div>
 </div>
 
-<div id="reportModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); backdrop-filter: blur(5px); justify-content: center; align-items: center; direction: rtl;">
-    <div style="background-color:#fff; padding:25px; border-radius:20px; width:90%; max-width:450px; position:relative; box-shadow: 0 15px 35px rgba(0,0,0,0.3); animation: slideUp 0.4s ease-out; overflow-y: auto; max-height: 95vh;">
+<div id="reportModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); backdrop-filter: blur(8px); justify-content: center; align-items: center; direction: rtl;">
+    <div style="background-color:#fff; padding:25px; border-radius:20px; width:90%; max-width:450px; position:relative; box-shadow: 0 15px 35px rgba(0,0,0,0.5); animation: slideUp 0.4s ease-out; overflow-y: auto; max-height: 95vh; border: 2px solid #ff0000;">
         
         <span onclick="document.getElementById('reportModal').style.display='none'" style="position:absolute; top:15px; left:20px; font-size:24px; color:#aaa; cursor:pointer;">✕</span>
         
-        <h2 style="text-align: center; color: #333; margin-top: 10px; font-size: 20px;">بيانات السيارة المفقودة</h2>
+        <div style="background-color: #ff0000; color: #fff; padding: 15px; border-radius: 12px; margin-bottom: 15px; text-align: center; border: 2px solid #b30000; box-shadow: 0 4px 10px rgba(255,0,0,0.2);">
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">⚠️ تنبيه هام جداً</div>
+            <div style="font-size: 15px; line-height: 1.5;">بدون دفع رسوم الخدمة بلاغك <b>لا يعتمد</b>.<br>الرجاء ارسال صورة الإشعار للإعتماد فوراً.</div>
+        </div>
+
+        <h2 style="text-align: center; color: #333; margin-top: 0; font-size: 18px;">بيانات البلاغ المفقود</h2>
         
-        <div style="background-color: #fdf2f2; padding: 15px; border-radius: 12px; margin-bottom: 20px; border-right: 4px solid #d9534f;">
-            <div style="font-size: 18px; color: #d9534f; text-align: center; font-weight: bold; margin-bottom: 5px;">قيمة البلاغ: 7,000 ج.س</div>
-            <p style="font-size: 13px; color: #666; margin: 0; text-align: center;">حوّل لحساب: <b>2113114</b> (سعد قسم الباري)</p>
+        <div style="background-color: #fdf2f2; padding: 12px; border-radius: 10px; margin-bottom: 15px; border-right: 4px solid #d9534f; text-align: center;">
+            <div style="font-size: 17px; color: #d9534f; font-weight: bold;">الرسوم: 7,000 ج.س</div>
+            <p style="font-size: 13px; color: #444; margin: 5px 0 0;">بنكك: <b>2113114</b> (سعد قسم الباري)</p>
         </div>
 
         <form id="popupForm">
-            <div style="margin-bottom: 12px; text-align: right;">
-                <label style="font-size: 13px; color: #888; margin-right: 5px;">نوع العربية</label>
-                <input type="text" id="popCarType" placeholder="مثال: توسان 2020" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fafafa;">
+            <div style="margin-bottom: 10px; text-align: right;">
+                <label style="font-size: 12px; color: #888;">نوع العربية</label>
+                <input type="text" id="popCarType" placeholder="مثال: توسان 2020" style="width: 100%; padding: 10px; border: 1.5px solid #eee; border-radius: 8px; box-sizing: border-box; outline: none;">
             </div>
             
-            <div style="margin-bottom: 12px; text-align: right;">
-                <label style="font-size: 13px; color: #888; margin-right: 5px;">رقم الشاسي</label>
-                <input type="text" id="popChassis" placeholder="أدخل رقم الشاسي كاملاً" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fafafa;">
+            <div style="margin-bottom: 10px; text-align: right;">
+                <label style="font-size: 12px; color: #888;">رقم الشاسي</label>
+                <input type="text" id="popChassis" placeholder="أدخل رقم الشاسي كاملاً" style="width: 100%; padding: 10px; border: 1.5px solid #eee; border-radius: 8px; box-sizing: border-box; outline: none;">
             </div>
 
-            <div style="margin-bottom: 12px; text-align: right;">
-                <label style="font-size: 13px; color: #888; margin-right: 5px;">رقم اللوحة</label>
-                <input type="text" id="popPlateNum" placeholder="مثال: 12345" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fafafa;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                <div style="text-align: right;">
+                    <label style="font-size: 12px; color: #888;">رقم اللوحة</label>
+                    <input type="text" id="popPlateNum" placeholder="12345" style="width: 100%; padding: 10px; border: 1.5px solid #eee; border-radius: 8px; box-sizing: border-box;">
+                </div>
+                <div style="text-align: right;">
+                    <label style="font-size: 12px; color: #888;">حرف اللوحة</label>
+                    <input type="text" id="popPlateChar" placeholder="خ 1 / ج د" style="width: 100%; padding: 10px; border: 1.5px solid #eee; border-radius: 8px; box-sizing: border-box;">
+                </div>
             </div>
 
-            <div style="margin-bottom: 12px; text-align: right;">
-                <label style="font-size: 13px; color: #888; margin-right: 5px;">حرف اللوحة</label>
-                <input type="text" id="popPlateChar" placeholder="أمثلة: خ 1 / ج د / ب ح" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fafafa;">
-            </div>
-
-            <div style="margin-bottom: 12px; text-align: right;">
-                <label style="font-size: 13px; color: #888; margin-right: 5px;">رقم هاتف للتواصل</label>
-                <input type="tel" id="popPhone" placeholder="رقم هاتفك" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fafafa;">
+            <div style="margin-bottom: 10px; text-align: right;">
+                <label style="font-size: 12px; color: #888;">رقم هاتف للتواصل</label>
+                <input type="tel" id="popPhone" placeholder="رقم هاتفك" style="width: 100%; padding: 10px; border: 1.5px solid #eee; border-radius: 8px; box-sizing: border-box;">
             </div>
 
             <div style="margin-bottom: 20px; text-align: right;">
-                <label style="font-size: 13px; color: #888; margin-right: 5px;">رقم الإشعار</label>
-                <input type="text" id="popReceipt" placeholder="ارسل صورة الاشعار بعد ارسال الطلب" style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; box-sizing: border-box; outline: none; background: #fffde7; border-color: #fbc02d;">
+                <label style="font-size: 12px; color: #d9534f; font-weight: bold;">رقم الإشعار (مطلوب للإعتماد)</label>
+                <input type="text" id="popReceipt" placeholder="أدخل رقم الإشعار هنا" style="width: 100%; padding: 12px; border: 2px solid #fbc02d; border-radius: 8px; box-sizing: border-box; background: #fffde7; font-weight: bold;">
             </div>
 
-            <button type="button" onclick="sendPopupToWhatsApp()" style="width: 100%; background: #25d366; color: white; border: none; padding: 16px; font-size: 17px; font-weight: bold; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                 إرسال الطلب عبر واتساب 
+            <button type="button" onclick="sendPopupToWhatsApp()" style="width: 100%; background: #25d366; color: white; border: none; padding: 16px; font-size: 16px; font-weight: bold; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+                 دفع الرسوم وإرسال البلاغ 
             </button>
+            <p style="text-align: center; font-size: 11px; color: #888; margin-top: 10px;">سيتم فتح واتساب لإرفاق صورة الإشعار يدوياً بعد إرسال البيانات</p>
         </form>
     </div>
 </div>
@@ -342,24 +349,26 @@
         var phone = document.getElementById('popPhone').value;
         var receipt = document.getElementById('popReceipt').value;
 
-        if(!carType || !chassis || !phone) {
-            alert('الرجاء إكمال البيانات الأساسية!');
+        if(!carType || !chassis || !phone || !receipt) {
+            alert('🚨 تنبيه: يجب إدخال كافة البيانات ورقم الإشعار لاعتماد البلاغ!');
             return;
         }
 
-        var message = "🚨 *بلاغ سيارة مفقودة جديد* 🚨%0a%0a" +
+        var message = "⚠️ *طلب اعتماد بلاغ جديد (مدفوع)* ⚠️%0a%0a" +
                       "🚙 *نوع العربية:* " + carType + "%0a" +
                       "🔢 *رقم الشاسي:* " + chassis + "%0a" +
                       "📋 *بيانات اللوحة:* [ " + plateNum + " - " + plateChar + " ]%0a" +
                       "📞 *تلفون التواصل:* " + phone + "%0a" +
-                      "🧾 *رقم الإشعار:* " + (receipt ? receipt : "سيُرفق صورة") + "%0a%0a" +
-                      "💰 *القيمة:* 7,000 ج.س%0a" +
-                      "📸 *تنبيه:* سأرسل صورة إشعار التحويل الآن لتأكيد الطلب.";
+                      "🧾 *رقم الإشعار:* " + receipt + "%0a" +
+                      "💰 *القيمة المسددة:* 7,000 ج.س%0a%0a" +
+                      "📸 *سأقوم الآن بإرسال صورة الإشعار أسفل هذه الرسالة مباشرة للاعتماد.*";
 
         var adminPhone = "249100030140"; 
         window.open("https://wa.me/" + adminPhone + "?text=" + message, '_blank');
     }
 </script>
+
+
 
 
 
